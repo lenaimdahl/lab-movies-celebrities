@@ -1,4 +1,5 @@
 const router = require("express").Router();
+const MovieModel = require("../models/movie.model");
 
 router.get("/create-movie", (req, res) => {
   res.render("movies/new-movie");
@@ -13,6 +14,10 @@ router.post("/create-movie", async (req, res) => {
     console.log("there was an error", err);
     res.redirect("movies/new-movie");
   }
+});
+
+router.get("/movies", (req, res) => {
+  res.render("movies/movies");
 });
 
 module.exports = router;
