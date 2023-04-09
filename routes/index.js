@@ -1,21 +1,12 @@
 const express = require("express");
 const router = require("express").Router();
 
+require("./celebrities.routes");
+require("./movies.routes");
+
 /* GET home page */
 router.get("/", (req, res, next) => {
   res.render("index");
-});
-
-router.get("/celebrities", (req, res, next) => {
-  res.render("celebrities");
-});
-
-router.get("/celebrities", (req, res, next) => {
-  res.render("celebrities/new-celebrety");
-});
-
-router.get("/movies", (req, res, next) => {
-  res.render("movies.routes");
 });
 
 module.exports = router;

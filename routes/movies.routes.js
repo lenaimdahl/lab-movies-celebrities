@@ -9,10 +9,10 @@ router.post("/create-movie", async (req, res) => {
   try {
     const newMovie = await MovieModel.create(req.body);
     console.log("New Movie Created ", newMovie);
-    res.redirect("movies");
+    res.redirect("/movies");
   } catch (err) {
     console.log("there was an error", err);
-    res.redirect("movies/new-movie");
+    res.redirect("/new-movie");
   }
 });
 

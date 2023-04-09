@@ -9,10 +9,10 @@ router.post("/create-celebrity", async (req, res) => {
   try {
     const newCelebrity = await CelebrityModel.create(req.body);
     console.log("New celebrity Created ", newCelebrity);
-    res.redirect("celebrities");
+    res.redirect("/celebrities");
   } catch (err) {
     console.log("there was an error", err);
-    res.redirect("celebrities/new-celebrity");
+    res.redirect("/new-celebrity");
   }
 });
 
