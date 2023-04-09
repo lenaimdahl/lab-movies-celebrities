@@ -5,6 +5,10 @@ router.get("/create", (req, res) => {
   res.render("celebrities/new-celebrity");
 });
 
+router.get("/all", (req, res) => {
+  res.render("celebrities/celebrities");
+});
+
 router.post("/create", async (req, res) => {
   try {
     const newCelebrity = await CelebrityModel.create(req.body);
