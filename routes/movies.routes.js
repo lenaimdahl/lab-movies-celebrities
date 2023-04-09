@@ -1,11 +1,11 @@
 const router = require("express").Router();
 const MovieModel = require("../models/movie.model");
 
-router.get("/create-movie", (req, res) => {
+router.get("/create", (req, res) => {
   res.render("movies/new-movie");
 });
 
-router.post("/create-movie", async (req, res) => {
+router.post("/create", async (req, res) => {
   try {
     const newMovie = await MovieModel.create(req.body);
     console.log("New Movie Created ", newMovie);
@@ -16,7 +16,7 @@ router.post("/create-movie", async (req, res) => {
   }
 });
 
-router.get("/movies", (req, res) => {
+router.get("/all", (req, res) => {
   res.render("movies/movies");
 });
 
