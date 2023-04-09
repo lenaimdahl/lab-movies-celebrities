@@ -13,8 +13,10 @@ router.get("/all", async (req, res) => {
   res.render("movies/movies", { allMovies });
 });
 
-router.get("/movie-details", (req, res) => {
-  res.render("movies/movie-details");
+router.get("/:movieId", async (req, res) => {
+  const { movieId } = req.params;
+  const oneMovie = await MovieModel.findById(movieId).populate("cast");
+  res.render("movies/movie-details", { oneMovie });
 });
 
 router.post("/create", async (req, res) => {
